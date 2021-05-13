@@ -170,7 +170,44 @@
   min-height: 100%;
 }
 
+.nav-container {
+  width: 100%;
+  height: fit-content;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-list ul{
+  list-style: none;
+  display: flex;
+  padding-top: 10px;
+  margin-left: -450px;
+}
+
+.nav-list li {
+  padding: 10px;
+  margin: -10px 8px;
+  padding: 7px 20px;
+}
+
+.nav-list li:hover {
+  border: 1px #857240 solid;
+  background-color: #485861;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+button {
+  background-color: #19547b;
+  border: none;
+  box-shadow: 10px 0px 50px 0px #ccc;
+  color: white;
+  width: 70px;
+  height: 60px;
+} 
+
 </style>
+
 </head>
 <body style="overflow:hidden;">
   <video autoplay muted loop id="myVideo">
@@ -178,7 +215,17 @@
   </video>
 
 	<div class="flex-w flex-str size1 overlay1">
-
+    <div class="nav-container">
+      <div class="nav-list">
+        <ul>
+          <li>home</li>
+          <li>services</li>
+          <li>about</li>
+          <li>contact</li>
+        </ul>
+      </div>
+        <button class="btn">MENU</button
+    </div>
 		<div class="flex-w flex-col-sb wsize1 bg0 p-l-65 p-t-37 p-b-50 p-r-80 respon1" style="width:100%;">
 
 		<!-- Lamp -->
@@ -200,7 +247,7 @@
 			<div class="w-full flex-c-m">
 				<div class="wsize2">
 					<h3 class="l1-txt1 p-b-34 respon3" style="color:white;">
-						Coming Soon
+						
 					</h3>
 
 					<p class="m2-txt1 p-b-46">
@@ -251,7 +298,15 @@
 <!--===============================================================================================-->
 	<script src="vendor/tilt/tilt.jquery.min.js"></script>
 <!--===============================================================================================-->
-	<script src="js/main.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    var btn = document.querySelector(".btn");
+btn.addEventListener("click", function menu(){
+  var menu = document.querySelector(".nav-list");
+  menu.style.marginLeft = "450px";
+  menu.style.transition = "all 2s";
+})
+  </script>
 
 </body>
 </html>
